@@ -69,7 +69,7 @@ server {
   }
 
   if ($host ~ ^www\.) {
-     return 301 https://example.com$request_uri;
+     return 301 https://example.com$request_uri; # Do not forget to replace example.com with your own domain name.
   }
 
 ...
