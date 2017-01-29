@@ -31,6 +31,7 @@ server {
 However, it can easily go wrong if you swap server names in `server_name` directive:
 
 ```
+# WRONG CONFIGURATION! DO NOT COPY/PASTE IT ON YOUR SERVER!
 server {
   server_name www.example.com example.com;
   listen 80;
@@ -43,7 +44,7 @@ server {
   }
 
   if ($host ~ ^www\.) {
-     return 301 https://$server_name$request_uri;
+     return 301 https://$server_name$request_uri; # WRONG! Infinite redirect.
   }
 
 ...
