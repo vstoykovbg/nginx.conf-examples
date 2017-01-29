@@ -1,4 +1,6 @@
-# nginx.conf www to non-www and http to https redirects in one server block
+# nginx.conf example redirects
+
+## www to non-www and http to https redirects in one server block
 
 This will redirect:
 * all requests for http://www.example.com and https://www.example.com to https://example.com
@@ -31,6 +33,8 @@ However, it can easily go wrong if you swap server names in `server_name` direct
 ```
 server {
   server_name www.example.com example.com;
+  listen 80;
+  listen 443 ssl;
 
 ...
 
@@ -54,6 +58,8 @@ Here is more robust solution:
 ```
 server {
   server_name www.example.com example.com;
+  listen 80;
+  listen 443 ssl;
 
 ...
 
@@ -73,7 +79,7 @@ server {
 
 This feature can be achieved using different server blocks like below, but may break some control panels that does not tolerate big manual changes to config files.
 
-# Redirects using many server blocks
+## Redirects using many server blocks
 
 ```
 server {
@@ -97,12 +103,6 @@ server {
   listen 80;
   server_name example.com www.example.com;
   return 301 https://example.com$request_uri;
- 
-  ...
-  
 }
 ``` 
-
-
-
 
