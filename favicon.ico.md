@@ -1,6 +1,8 @@
 # nginx.com favicon.ico fix
 # Preventing PHP or other backend to be invoked when receiving requests for /favicon.ico
 
+This may be serous problem when using WordPress because 404 errors usually are not cached - the entire WordPress mammoth will be invoked just to tell "there is no such file". This job is better to be delegated to a web server.
+
 Method 1:
 
 ```
