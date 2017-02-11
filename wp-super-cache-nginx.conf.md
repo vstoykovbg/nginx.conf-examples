@@ -183,3 +183,8 @@ According to my observation, recent commenters will view their own comments imme
 
 There is also an option on WP Super Cache called "Make known users anonymous so they’re served supercached static files". This way logged in users will receive cached pages, but not directly by Nginx (cache will be server after invoking WordPress).
 
+# WP_CRON
+
+Because the WordPress will be invoked not often (because of Nginx serving cache most of the time), I suggest to disable WP-CRON by adding `define('DISABLE_WP_CRON', true);` to the `wp-config.php` and creating a cron job to be executed every minute with the correct username: `cd /home/UserAccountChangeMe/public_html/ ; php -q wp-cron.php`.
+
+
