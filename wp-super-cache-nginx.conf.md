@@ -211,5 +211,4 @@ $ cd ~/public_html/wp-includes/certificates
 $ cp ca-bundle.crt  ca-bundle.crt.bak
 $ cat ~/ssl.cert >> ca-bundle.crt
 ```
-
 This file will be overwritten when you update your WordPress, so this is not a good permanent solution.
