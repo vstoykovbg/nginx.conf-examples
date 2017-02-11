@@ -185,7 +185,7 @@ There is also an option on WP Super Cache called "Make known users anonymous so 
 
 # WP_CRON
 
-Because the WordPress will be invoked not often (because of Nginx serving cache most of the time), I suggest to disable WP-CRON by adding `define('DISABLE_WP_CRON', true);` to the `wp-config.php` and creating a cron job to be executed every minute with the correct username: `cd /home/UserAccountChangeMe/public_html/ ; php -q wp-cron.php`.
+Because the WordPress will not be invoked often (because of Nginx serving cache most of the time), I suggest to disable WP-CRON by adding `define('DISABLE_WP_CRON', true);` to the `wp-config.php` and creating a cron job to be executed every minute with the correct username: `cd /home/UserAccountChangeMe/public_html/ ; php -q wp-cron.php`.
 
 # CloudFlare and Incapsula
 
