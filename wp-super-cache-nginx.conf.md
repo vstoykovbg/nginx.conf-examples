@@ -144,7 +144,7 @@ If your server block serves http and https requests you should change it like th
     }
 ```
 
-In some guides you will find such example:
+In some guides you may find such example:
 ```
     # not very good example, however it works
     set $cachefile "/wp-content/cache/supercache/$http_host/$cache_uri/index.html";
