@@ -99,7 +99,7 @@ server {
 
         location ~ \.php$ {
             try_files $uri =404;
-            fastcgi_pass unix:/var/php-nginx/148519495327014.sock/socket;
+            fastcgi_pass unix:/var/php-nginx/000000000000000.sock/socket;
             fastcgi_param GATEWAY_INTERFACE CGI/1.1;
             fastcgi_param SERVER_SOFTWARE nginx;
             fastcgi_param QUERY_STRING $query_string;
