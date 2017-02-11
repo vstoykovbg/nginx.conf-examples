@@ -70,7 +70,7 @@ server {
             set $TestingThisFix 'Our WordPress'; # debug
         }
 
-        add_header Testing-This-Fix $TestingThisFix;
+        add_header Testing-This-Fix $TestingThisFix; # debug
 
         # Don't cache uris containing the following segments
         if ($request_uri ~* "(/wp-admin/|/xmlrpc.php|/wp-(app|cron|login|register|mail).php
