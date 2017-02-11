@@ -289,7 +289,6 @@ Here is what happened when I started this script on my WordPress test install:
 ```
 $ cd ~/public_html/
 $ ~/bin/compress_with_gzip_recursively.bash 
-$ ~/bin/compress_with_gzip_recursively.bash 
 ./wp-admin/js/editor.js:	 72.6%
 ./wp-admin/js/user-profile.min.js:	 64.4%
 ./wp-admin/js/word-count.min.js:	 57.6%
