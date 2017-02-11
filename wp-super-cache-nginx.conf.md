@@ -260,6 +260,12 @@ configure arguments: --prefix=/usr/share/nginx --sbin-path=/usr/sbin/nginx --mod
 
 In the example above it is enabled.
 
+To enable creation of `.gz` files by WP Super Cache, go to Settings -> WP Super Cache -> Advanced and check this checkbox:
+
+```
+[x] Compress pages so they’re served more quickly to visitors. (Recommended)
+```
+
 You may use this shell script to compress all `.css`, `.js`, `.ttp`, `.eot`, `.woff` and `.ttf` files found *in current directory* and its subdirectories:
 
 ```
