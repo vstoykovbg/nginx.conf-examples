@@ -33,6 +33,11 @@ server {
         access_log /var/log/nginx/example.com_access_log;
         error_log /var/log/nginx/example.com_error_log;
 
+        # some https settings
+        ssl_prefer_server_ciphers on;
+        ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
         location = /favicon.ico { return 404; log_not_found off; access_log off; } # remove this line if you have favicon.ico
 
         # upload big import files (also php.ini configuration needed: upload_max_filesize and post_max_size)
