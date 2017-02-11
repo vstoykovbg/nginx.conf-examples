@@ -153,7 +153,7 @@ In some guides you may find such example:
     }
 ```
 
-But the symbol `/` before `$cache_uri` is redundant - the `$cache_uri` variable contains leading `/`.
+However, the symbol `/` before `$cache_uri` is redundant - the `$cache_uri` variable contains leading `/`.
 
 Also, the `$https ~* "on"` is not as efficient as `$scheme = https`.
 
