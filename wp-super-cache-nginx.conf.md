@@ -132,7 +132,7 @@ If your server block serves only http requests you should change this line:
 to this:
 
 ```
-        set $cachefile "/wp-content/cache/supercache/$http_host$cache_uri/index.html";
+    set $cachefile "/wp-content/cache/supercache/$http_host$cache_uri/index.html";
 ```
 
 If your server block serves http and https requests you should change it like this:
