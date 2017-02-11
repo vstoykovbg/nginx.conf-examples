@@ -224,7 +224,7 @@ location = /favicon.ico { return 404; log_not_found off; access_log off; } # rem
 
 If you don't have `robots.txt` file the problem is similar – every time when a robot (i.e. Google bot) is visiting your website, WordPress will be invoked just to say "error 404". The simplest and fastest solution is just to create empty `robots.txt` file.
 
-## Using compressed files by WP Super Cache
+## Serving static .gz files, compressed in advance by WP Super Cache
 
 You may add `gzip_static on;` in the `location` block, but this feature will work only if it is enabled during compilation with `--with-http_gzip_static_module`.
 
@@ -242,7 +242,7 @@ And change it like this:
 ```
         # Try in the following order: (1) cachefile, (2) normal url, (3) php
         location / {
-            gzip_static on;
+            gzip_static on; # Enable Nginx's gzip static module
             try_files $cachefile $uri $uri/ /index.php;
         }
 ```
@@ -260,7 +260,7 @@ configure arguments: --prefix=/usr/share/nginx --sbin-path=/usr/sbin/nginx --mod
 
 In the example above it is enabled.
 
-You may use this shell script to compress all `.css`, `.js`, `.ttp`, `.eot` and `.woff` files *in current directory* and its subdirectories:
+You may use this shell script to compress all `.css`, `.js`, `.ttp`, `.eot`, `.woff` and `.ttf` files found *in current directory* and its subdirectories:
 
 ```
 #!/bin/bash
