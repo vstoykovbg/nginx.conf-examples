@@ -183,11 +183,11 @@ According to my observation, recent commenters will view their own comments imme
 
 There is also an option on WP Super Cache called "Make known users anonymous so they’re served supercached static files". This way logged in users will receive cached pages, but not directly by Nginx (cache will be server after invoking WordPress).
 
-# WP_CRON
+## WP_CRON
 
 Because the WordPress will not be invoked often (because of Nginx serving cache most of the time), I suggest to disable WP-CRON by adding `define('DISABLE_WP_CRON', true);` to the `wp-config.php` and to create a cron job to be executed every minute with the correct username: `cd /home/UserAccountChangeMe/public_html/ ; php -q wp-cron.php`.
 
-# CloudFlare and Incapsula
+## CloudFlare and Incapsula
 
 Cloudflare/Incapsula may block some or all requests made by WordPress. This may interfere with the *preload*, because *preload* is working by *WP Super Cache* sending requests to the web server using WP's [http API](https://codex.wordpress.org/HTTP_API). These requests are with user agent `WordPress/4.7.2; https://example.com`.
 
@@ -213,3 +213,14 @@ $ cat ~/ssl.cert >> ca-bundle.crt
 ```
 
 This file will be overwritten when you update your WordPress, so this is not a good permanent solution.
+
+## favicon.ico and robots.txt
+
+If you don't have `/favicon.ico` the WordPress will be invoked every time when someone is visiting your webiste just to say "there is no such file", which is not efficient. Instead, create such file or use configuration like this:
+
+```
+location = /favicon.ico { return 404; log_not_found off; access_log off; } # remove this line if you have favicon.ico
+```
+
+If you don't have `robots.txt` file the problem is similar – every time when a robot (i.e. Google bot) is visiting your website, WordPress will be invoked just to say "error 404". The simplest and fastest solution is just to create empty `robots.txt` file.
+

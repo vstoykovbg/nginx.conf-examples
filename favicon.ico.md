@@ -79,3 +79,5 @@ Connection: keep-alive
 Vary: Accept-Encoding
 ```
 
+If you don't have `robots.txt` file the problem is similar – every time when a robot (i.e. Google bot) is visiting your website, WordPress will be invoked just to say "error 404". The simplest and fastest solution is just to create empty `robots.txt` file.
+
