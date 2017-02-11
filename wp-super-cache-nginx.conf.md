@@ -5,7 +5,7 @@
 ```
 # redirect www to non-www for https requests
 server {
-        listen 443 ssl;
+        listen 443 ssl http2;
         server_name www.example.com;
         ssl_certificate /home/exampleaccount/ssl.cert;
         ssl_certificate_key /home/exampleaccount/ssl.key;
@@ -25,7 +25,7 @@ server {
 
 server {
         server_name example.com;
-        listen 443 ssl;
+        listen 443 ssl http2;
         ssl_certificate /home/exampleaccount/ssl.cert;
         ssl_certificate_key /home/exampleaccount/ssl.key;
         root /home/exampleaccount/public_html;
@@ -206,9 +206,9 @@ The solution is to add your domain name to `/etc/hosts` with your local IP addre
 
 You should remember to change this if you change the IP address where Nginx is listening.
 
-# Using self-signed SSL sertificate
+# Using self-signed TLS certificate (a.k.a. SSL certificate)
 
-If you use self-signed SSL certificate preload will not work. In order to make it work you should use a valid SSL certificate or add your certificate to the WordPress's `ca-bundle.crt`:
+If you use self-signed TLS certificate preload will not work. In order to make it work you should use a valid TLScertificate or add your TLS certificate to the WordPress's `ca-bundle.crt`:
 
 ```
 # su myusername
