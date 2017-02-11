@@ -197,7 +197,6 @@ The solution is to add your domain name to `/etc/hosts` with your local IP addre
 
 ```
 93.184.216.34 example.com www.example.com
-
 ```
 
 You should remember to change this if you change the IP address where Nginx is listening.
