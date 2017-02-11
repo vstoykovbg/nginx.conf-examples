@@ -202,3 +202,16 @@ The solution is to add your domain name to `/etc/hosts` with your local IP addre
 
 You should remember to change this if you change the IP address where Nginx is listening.
 
+# Using self-signed SSL sertificate
+
+If you use self-signed SSL certificate preload will not work. In order to make it work you should use a valid SSL certificate or add your certificate to the WordPress's `ca-bundle.crt`:
+
+```
+# su myusername
+$ cd ~/public_html/wp-includes/certificates
+$ cp ca-bundle.crt  ca-bundle.crt.bak
+$ cat ~/ssl.cert >> ca-bundle.crt
+```
+
+This file will be overwritten when you update your WordPress, so this is not a good permanent solution.
+
