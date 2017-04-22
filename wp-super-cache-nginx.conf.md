@@ -1,4 +1,4 @@
-# WP Super Cahce nginx.conf example
+# WP Super Cache nginx.conf example
 
 ## Example configuration for Nginx and WordPress with WP Super Cache plugin
 
