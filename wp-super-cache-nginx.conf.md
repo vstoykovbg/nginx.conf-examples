@@ -196,7 +196,7 @@ Because the WordPress will not be invoked often (because of Nginx serving cache 
 
 Cloudflare/Incapsula may block some or all requests made by WordPress. This may interfere with the *preload*, because *preload* is working by *WP Super Cache* sending requests to the web server using WP's [http API](https://codex.wordpress.org/HTTP_API). These requests are with user agent `WordPress/4.7.2; https://example.com`.
 
-Even if there are no blocked requests, it is not very inefficient to send request to CloudFlare/Incapsula server, the latter to send request to the Nginx, Nginx to invoke WordPress, etc.
+Even if there are no blocked requests, it is inefficient to send request to CloudFlare/Incapsula server, the latter to send request to the Nginx, Nginx to invoke WordPress, etc.
 
 The solution is to add your domain name to `/etc/hosts` with your local IP address. For example:
 
